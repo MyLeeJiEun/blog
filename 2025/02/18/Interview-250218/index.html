@@ -9,7 +9,7 @@
     <meta name="description" content="1. 线程池 生产者消费者 任务队列 互斥访问临界资源 互斥锁 条件变量  2. 死锁* 死锁的排查 查看进程CPU利用率，内存利用率(先使用命令ps aux | grep 获取进程的进程号， 然后查看cpu,内存使用率top -Hp [进程号]) 若发现进程所占用的CPU和内存资源都很低,则是有可能发生的死锁，进而导致阻塞 此时若是在生产环境下，则可尝试查看日志，使用gdb attach “进程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Interview-250218">
-<meta property="og:url" content="http://example.com/2025/02/18/Interview-250218/index.html">
+<meta property="og:url" content="http://myleejieun.github.io/blog/2025/02/18/Interview-250218/index.html">
 <meta property="og:site_name" content="leejieun">
 <meta property="og:description" content="1. 线程池 生产者消费者 任务队列 互斥访问临界资源 互斥锁 条件变量  2. 死锁* 死锁的排查 查看进程CPU利用率，内存利用率(先使用命令ps aux | grep 获取进程的进程号， 然后查看cpu,内存使用率top -Hp [进程号]) 若发现进程所占用的CPU和内存资源都很低,则是有可能发生的死锁，进而导致阻塞 此时若是在生产环境下，则可尝试查看日志，使用gdb attach “进程">
 <meta property="og:locale">
@@ -97,17 +97,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2025/02/18/Interview-250218/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2025/02/18/Interview-250218/&text=Interview-250218"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2025/02/18/Interview-250218/&title=Interview-250218"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2025/02/18/Interview-250218/&is_video=false&description=Interview-250218"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Interview-250218&body=Check out this article: http://example.com/2025/02/18/Interview-250218/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2025/02/18/Interview-250218/&title=Interview-250218"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2025/02/18/Interview-250218/&title=Interview-250218"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2025/02/18/Interview-250218/&title=Interview-250218"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2025/02/18/Interview-250218/&title=Interview-250218"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2025/02/18/Interview-250218/&name=Interview-250218&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2025/02/18/Interview-250218/&t=Interview-250218"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://myleejieun.github.io/blog/2025/02/18/Interview-250218/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://myleejieun.github.io/blog/2025/02/18/Interview-250218/&text=Interview-250218"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://myleejieun.github.io/blog/2025/02/18/Interview-250218/&title=Interview-250218"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://myleejieun.github.io/blog/2025/02/18/Interview-250218/&is_video=false&description=Interview-250218"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Interview-250218&body=Check out this article: http://myleejieun.github.io/blog/2025/02/18/Interview-250218/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://myleejieun.github.io/blog/2025/02/18/Interview-250218/&title=Interview-250218"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://myleejieun.github.io/blog/2025/02/18/Interview-250218/&title=Interview-250218"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://myleejieun.github.io/blog/2025/02/18/Interview-250218/&title=Interview-250218"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://myleejieun.github.io/blog/2025/02/18/Interview-250218/&title=Interview-250218"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://myleejieun.github.io/blog/2025/02/18/Interview-250218/&name=Interview-250218&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://myleejieun.github.io/blog/2025/02/18/Interview-250218/&t=Interview-250218"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -211,17 +211,17 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2025/02/18/Interview-250218/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2025/02/18/Interview-250218/&text=Interview-250218"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2025/02/18/Interview-250218/&title=Interview-250218"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2025/02/18/Interview-250218/&is_video=false&description=Interview-250218"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Interview-250218&body=Check out this article: http://example.com/2025/02/18/Interview-250218/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2025/02/18/Interview-250218/&title=Interview-250218"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2025/02/18/Interview-250218/&title=Interview-250218"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2025/02/18/Interview-250218/&title=Interview-250218"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2025/02/18/Interview-250218/&title=Interview-250218"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2025/02/18/Interview-250218/&name=Interview-250218&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2025/02/18/Interview-250218/&t=Interview-250218"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://myleejieun.github.io/blog/2025/02/18/Interview-250218/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://myleejieun.github.io/blog/2025/02/18/Interview-250218/&text=Interview-250218"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://myleejieun.github.io/blog/2025/02/18/Interview-250218/&title=Interview-250218"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://myleejieun.github.io/blog/2025/02/18/Interview-250218/&is_video=false&description=Interview-250218"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Interview-250218&body=Check out this article: http://myleejieun.github.io/blog/2025/02/18/Interview-250218/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://myleejieun.github.io/blog/2025/02/18/Interview-250218/&title=Interview-250218"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://myleejieun.github.io/blog/2025/02/18/Interview-250218/&title=Interview-250218"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://myleejieun.github.io/blog/2025/02/18/Interview-250218/&title=Interview-250218"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://myleejieun.github.io/blog/2025/02/18/Interview-250218/&title=Interview-250218"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://myleejieun.github.io/blog/2025/02/18/Interview-250218/&name=Interview-250218&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://myleejieun.github.io/blog/2025/02/18/Interview-250218/&t=Interview-250218"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
